@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">EqualAccess</string>
+    <!-- <string name="app_name">EqualAccess</string> -->
+    <string name="app_name">TestApp</string>
 </resources>
