@@ -1,35 +1,26 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Switch} from 'react-native';
 import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
 import Language from '../modal/language/Language';
-import {COLORS, ICONS} from '../../constants';
+import {COLORS, globalFont, ICONS} from '../../constants/constant';
 import Button from '../button/Button';
 import {useAppContext} from '../../theme/AppContext';
 import {useTheme} from '@react-navigation/native';
 
 const DrawerContent = (props: any) => {
+  const font = globalFont();
+  const {colors} = useTheme();
   const [modalVisible, setModalVisible] = useState(false);
-  // const {isDarkMode, setIsDarkMode} = useAppContext();
-  // const [fontSize, setFontSize] = useState(14);
-  // const {colors} = useTheme();
-  // const increaseFontSize = () => {
-
-  // };
-
-  // const decreaseFontSize = () => {
-
-  // };
   const {
     isDarkMode,
-    setIsDarkMode,
     fontSize,
+    setIsDarkMode,
     increaseFontSize,
     decreaseFontSize,
   } = useAppContext();
-  const {colors} = useTheme();
 
   return (
     <DrawerContentScrollView {...props}>
@@ -46,15 +37,7 @@ const DrawerContent = (props: any) => {
             color={colors.text}
           />
           <TouchableOpacity onPress={() => setModalVisible(true)}>
-            <Text
-              style={{
-                fontSize,
-                color: colors.text,
-                marginLeft: 13,
-                fontWeight: '500',
-              }}>
-              Language
-            </Text>
+            <Text style={[font, {marginLeft: 13}]}>Language</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -68,17 +51,12 @@ const DrawerContent = (props: any) => {
             size={22}
             color={colors.text}
           />
-          <Text
-            style={{
-              fontSize,
-              color: colors.text,
-              marginLeft: 13,
-              fontWeight: '500',
-            }}>
-            Dark Mode
-          </Text>
+          <Text style={[font, {marginLeft: 13}]}>Dark Mode</Text>
         </View>
         <Switch
+          trackColor={{false: COLORS.lightBlue, true: COLORS.lightBlue}}
+          thumbColor={COLORS.blue}
+          ios_backgroundColor={COLORS.lightBlue}
           value={isDarkMode}
           onValueChange={() => setIsDarkMode(prev => !prev)}
         />
@@ -93,18 +71,11 @@ const DrawerContent = (props: any) => {
             size={22}
             color={colors.text}
           />
-          <Text
-            style={{
-              fontSize,
-              color: colors.text,
-              marginLeft: 13,
-              fontWeight: '500',
-            }}>
-            Font Size
-          </Text>
+          <Text style={[font, {marginLeft: 13}]}>Font Size</Text>
         </View>
-        <View style={styles.fontSizeControls}>
+        <View style={styles.labelContainer}>
           <Button
+            disabled={fontSize <= 14}
             btnCustomStyle={styles.btnCustomStyle}
             icon={true}
             iconFamily="feather"
@@ -113,9 +84,10 @@ const DrawerContent = (props: any) => {
             iconColor={COLORS.white}
             onPress={decreaseFontSize}
           />
-          {/* <Text style={styles.fontSizeText}>{fontSize}</Text> */}
-          <View style={styles.fontSizeText} />
+
+          <View style={{paddingHorizontal: 8}} />
           <Button
+            disabled={fontSize >= 22}
             btnCustomStyle={styles.btnCustomStyle}
             icon={true}
             iconFamily="feather"
@@ -147,20 +119,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  labelText: {
-    fontSize: 14,
-    fontWeight: '500',
-    marginLeft: 13,
-  },
-  fontSizeControls: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  fontSizeText: {
-    fontSize: 16,
-    fontWeight: '500',
-    marginHorizontal: 10,
-  },
   btnCustomStyle: {
     height: 30,
     width: 30,
@@ -168,8 +126,5 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.blue,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  customTitleStyle: {
-    fontSize: 20,
   },
 });

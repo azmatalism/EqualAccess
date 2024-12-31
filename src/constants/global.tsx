@@ -1,4 +1,16 @@
-import {COLORS} from '.';
+import {useTheme} from '@react-navigation/native';
+import {useAppContext} from '../theme/AppContext';
+import {COLORS} from './constant';
+
+export const globalFont = () => {
+  const {fontSize} = useAppContext();
+  const {colors} = useTheme();
+  return {
+    fontSize,
+    color: colors.text,
+    fontWeight: '500' as '500',
+  };
+};
 
 export const globalStyles = {
   paddingHorizontal: 24,

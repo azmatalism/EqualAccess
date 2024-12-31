@@ -1,6 +1,6 @@
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import {COLORS} from '../../constants';
+import {COLORS} from '../../constants/constant';
 
 const Gradient = ({style, children}: any) => {
   return (

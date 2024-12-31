@@ -1,14 +1,11 @@
 import {SafeAreaView, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {styles} from './styles';
-import {tabs} from '../../constants/arrays';
-import {BottomTab, Header} from '../../constants';
-import {DrawerActions, useTheme} from '@react-navigation/native';
-import {useAppContext} from '../../theme/AppContext';
+import {BottomTab, globalFont, Header, tabs} from '../../constants/constant';
+import {DrawerActions} from '@react-navigation/native';
 
 const Contact = ({navigation}: any) => {
-  const {fontSize} = useAppContext();
-  const {colors} = useTheme();
+  const font = globalFont();
   const [activeTab, setActiveTab] = useState(3);
 
   const handleTabPress = (index: any) => {
@@ -34,9 +31,7 @@ const Contact = ({navigation}: any) => {
     <SafeAreaView style={styles.container}>
       <Header heading={'Contact Us'} navigation={navigation} />
       <View style={styles.container}>
-        <Text style={{fontSize, color: colors.text, fontWeight: '500'}}>
-          Contact!
-        </Text>
+        <Text style={font}>Contact!</Text>
       </View>
       <BottomTab
         tabs={tabs}

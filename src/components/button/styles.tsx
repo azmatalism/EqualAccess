@@ -1,6 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {globalStyles} from '../../constants/global';
-import {COLORS} from '../../constants';
+import {COLORS} from '../../constants/constant';
 
 export const styles = StyleSheet.create({
   button: {
@@ -12,7 +11,9 @@ export const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 14,
-    // fontWeight: '500',
     color: COLORS.white,
+  },
+  disabled: {
+    backgroundColor: COLORS.lightBlue,
   },
 });

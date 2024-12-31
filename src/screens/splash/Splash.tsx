@@ -1,7 +1,7 @@
 import {Image, SafeAreaView} from 'react-native';
 import React, {useEffect} from 'react';
 import {styles} from './styles';
-import {IMGS, ROUTES} from '../../constants';
+import {IMGS, ROUTES} from '../../constants/constant';
 import {useTheme} from '@react-navigation/native';
 
 const Splash = ({navigation}: any) => {

@@ -17,7 +17,7 @@ import languagesList from '../../../services/languagesList.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Gradient from '../../components/gradient/Gradient';
 import Icon from '../../constants/Icon';
-import {COLORS, IMGS} from '../../constants';
+import {COLORS, IMGS} from '../../constants/constant';
 
 const Language = ({navigation}: any) => {
   const {t} = useTranslation();

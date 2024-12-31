@@ -1,14 +1,11 @@
 import {View, Text, SafeAreaView} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {tabs} from '../../constants/arrays';
 import {styles} from './styles';
-import {BottomTab, Header} from '../../constants';
-import {DrawerActions, useTheme} from '@react-navigation/native';
-import {useAppContext} from '../../theme/AppContext';
+import {BottomTab, globalFont, Header, tabs} from '../../constants/constant';
+import {DrawerActions} from '@react-navigation/native';
 
 function Home({navigation}: any) {
-  const {fontSize} = useAppContext();
-  const {colors} = useTheme();
+  const font = globalFont();
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabPress = (index: any) => {
@@ -34,9 +31,7 @@ function Home({navigation}: any) {
     <SafeAreaView style={styles.container}>
       <Header heading={'Dashboard'} navigation={navigation} />
       <View style={styles.container}>
-        <Text style={{fontSize, color: colors.text, fontWeight: '500'}}>
-          Home!
-        </Text>
+        <Text style={font}>Home!</Text>
       </View>
       <BottomTab
         tabs={tabs}
