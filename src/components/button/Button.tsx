@@ -1,7 +1,7 @@
 import {Text, TouchableOpacity, Dimensions} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
-import {ICONS} from '../../constants';
+import {ICONS} from '../../constants/constant';
 
 const {height, width} = Dimensions.get('window');
 const Button = ({
@@ -14,12 +14,13 @@ const Button = ({
   iconFamily,
   size,
   iconColor,
+  disabled,
 }: any) => {
   return (
     <TouchableOpacity
-      onPress={onPress}
-      activeOpacity={0.4}
-      style={[styles.button, btnCustomStyle]}>
+      onPress={disabled ? null : onPress}
+      activeOpacity={disabled ? 1 : 0.4}
+      style={[styles.button, btnCustomStyle, disabled && styles.disabled]}>
       {icon ? (
         <ICONS
           name={name}

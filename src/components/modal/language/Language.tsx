@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 import i18next from '../../../../services/i18n';
 import languagesList from '../../../../services/languagesList.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {COLORS} from '../../../constants';
+import {COLORS} from '../../../constants/constant';
 import Button from '../../button/Button';
 
 const Language = ({visible, onClose}: any) => {

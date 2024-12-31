@@ -1,6 +1,6 @@
 import {Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import {COLORS, ICONS, shadow} from '../../constants';
+import {COLORS, ICONS, shadow} from '../../constants/constant';
 import {styles} from './styles';
 import {useTheme} from '@react-navigation/native';
 import {useAppContext} from '../../theme/AppContext';

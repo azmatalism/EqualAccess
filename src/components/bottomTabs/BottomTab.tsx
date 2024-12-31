@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './styles';
 import {useTranslation} from 'react-i18next';
-import {COLORS, ICONS, shadow} from '../../constants';
+import {COLORS, ICONS, shadow} from '../../constants/constant';
 import {useTheme} from '@react-navigation/native';
 
 const BottomTab = ({tabs, activeTab, onTabPress, disable}: any) => {

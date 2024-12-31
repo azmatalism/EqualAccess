@@ -1,22 +1,31 @@
 import React, {useState} from 'react';
-import {Home, Services, News, Contact} from '../screens';
-import {COLORS, globalStyles, ICONS, ROUTES} from '../constants';
+import {Home, Services, News, Contact} from '../screens/screens';
+import {
+  COLORS,
+  globalFont,
+  globalStyles,
+  ICONS,
+  ROUTES,
+} from '../constants/constant';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerContent from '../components/drawerContent/DrawerContent';
+import {useAppContext} from '../theme/AppContext';
+import {useTheme} from '@react-navigation/native';
 
 const Drawer = createDrawerNavigator();
 
 function DrawerNavigation() {
+  const {fontSize} = useAppContext();
+  const {colors} = useTheme();
+  const font = globalFont();
   return (
     <Drawer.Navigator
       drawerContent={props => <DrawerContent {...props} />}
       screenOptions={{
-        //Hide All Drawer Screen Header
         headerShown: false,
-        // Selected item or screen background color
         drawerActiveBackgroundColor: COLORS.blueBackground,
-        // Selected item or screen name color
         drawerActiveTintColor: COLORS.blue,
+        drawerInactiveTintColor: COLORS.black,
         drawerStyle: {
           borderTopRightRadius: 26,
           borderBottomRightRadius: 26,
@@ -24,11 +33,11 @@ function DrawerNavigation() {
         },
         drawerItemStyle: {
           marginVertical: 1,
+          borderRadius: 8,
         },
         drawerLabelStyle: {
-          fontSize: 14,
-          fontWeight: '500',
-          // color: COLORS.black,
+          fontSize,
+          color: colors.text,
         },
       }}>
       <Drawer.Screen
@@ -36,12 +45,12 @@ function DrawerNavigation() {
         component={Home}
         options={{
           title: 'Dashboard',
-          drawerIcon: ({focused, color, size}) => (
+          drawerIcon: () => (
             <ICONS
               iconFamily="ionicons"
               name="home-sharp"
               size={22}
-              color={color}
+              color={colors.text}
             />
           ),
         }}
@@ -51,12 +60,12 @@ function DrawerNavigation() {
         component={Services}
         options={{
           title: 'Services',
-          drawerIcon: ({color}) => (
+          drawerIcon: () => (
             <ICONS
               iconFamily="ionicons"
               name="cube-outline"
               size={22}
-              color={color}
+              color={colors.text}
             />
           ),
         }}
@@ -66,12 +75,12 @@ function DrawerNavigation() {
         component={News}
         options={{
           title: 'News and Updates',
-          drawerIcon: ({focused, color, size}) => (
+          drawerIcon: () => (
             <ICONS
               iconFamily="ionicons"
               name="document-text-outline"
               size={22}
-              color={color}
+              color={colors.text}
             />
           ),
         }}
@@ -81,12 +90,12 @@ function DrawerNavigation() {
         component={Contact}
         options={{
           title: 'Contacts Us',
-          drawerIcon: ({focused, color, size}) => (
+          drawerIcon: () => (
             <ICONS
               iconFamily="ionicons"
               name="chatbox-outline"
               size={22}
-              color={color}
+              color={colors.text}
             />
           ),
         }}

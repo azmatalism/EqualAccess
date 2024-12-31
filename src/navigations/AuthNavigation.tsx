@@ -1,6 +1,6 @@
 import React from 'react';
-import {Splash, Services, News, Contact} from '../screens';
-import {COLORS, ROUTES} from '../constants';
+import {Splash, Services, News, Contact} from '../screens/screens';
+import {COLORS, ROUTES} from '../constants/constant';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import DrawerNavigation from './DrawerNavigation';
 
