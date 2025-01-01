@@ -3,8 +3,10 @@ import React, {useEffect, useState} from 'react';
 import {styles} from './styles';
 import {BottomTab, globalFont, Header, tabs} from '../../constants/constant';
 import {DrawerActions} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
 function Home({navigation}: any) {
+  const {t} = useTranslation();
   const font = globalFont();
   const [activeTab, setActiveTab] = useState(0);
 
@@ -29,9 +31,9 @@ function Home({navigation}: any) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header heading={'Dashboard'} navigation={navigation} />
+      <Header heading={t('dashboard')} navigation={navigation} />
       <View style={styles.container}>
-        <Text style={font}>Home!</Text>
+        <Text style={font}>{t('dashboard')}</Text>
       </View>
       <BottomTab
         tabs={tabs}

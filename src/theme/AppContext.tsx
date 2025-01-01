@@ -9,10 +9,10 @@ import React, {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 interface FontStyles {
-  regular: {fontSize: number; fontWeight: string};
-  medium: {fontSize: number; fontWeight: string};
-  bold: {fontSize: number; fontWeight: string};
-  heavy: {fontSize: number; fontWeight: string};
+  regular: {fontSize: number; fontWeight: 400};
+  medium: {fontSize: number; fontWeight: 500};
+  bold: {fontSize: number; fontWeight: 700};
+  heavy: {fontSize: number; fontWeight: 900};
 }
 
 interface AppContextType {
@@ -42,10 +42,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({children}) => {
     // Default to 16 if fontSize is not yet loaded
     const baseFontSize = fontSize || 16;
     return {
-      regular: {fontSize: baseFontSize, fontWeight: 'normal'},
-      medium: {fontSize: baseFontSize + 2, fontWeight: '500'},
-      bold: {fontSize: baseFontSize + 4, fontWeight: 'bold'},
-      heavy: {fontSize: baseFontSize + 8, fontWeight: '900'},
+      regular: {fontSize: baseFontSize, fontWeight: 400},
+      medium: {fontSize: baseFontSize + 2, fontWeight: 500},
+      bold: {fontSize: baseFontSize + 4, fontWeight: 700},
+      heavy: {fontSize: baseFontSize + 8, fontWeight: 900},
     };
   }, [fontSize]);
 

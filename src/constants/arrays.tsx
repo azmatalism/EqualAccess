@@ -33,27 +33,27 @@ export const dashboardCardArray = [
 
 export const tabs = [
   {
-    label: 'Home',
+    label: 'tab_home',
     screen: 'Home Drawer',
     icon: 'home-sharp',
   },
   {
-    label: 'Services',
+    label: 'service',
     screen: 'Services Drawer',
     icon: 'cube-outline',
   },
   {
-    label: 'News',
+    label: 'tab_news',
     screen: 'News Drawer',
     icon: 'document-text-outline',
   },
   {
-    label: 'Contact',
+    label: 'tab_contact',
     screen: 'Contact Drawer',
     icon: 'chatbox-outline',
   },
   {
-    label: 'Menu',
+    label: 'tab_menu',
     screen: null,
     icon: 'menu-outline',
   },

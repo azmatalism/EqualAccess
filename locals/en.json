@@ -1,10 +1,18 @@
 {
-  "welcome": "Welcome to App",
-  "licenseAgg": "I agree to the End User License Agreement for LISA",
-  "PrivacyAgg": "I agree to the Privacy Policy for LISA",
-  "home": "Home",
-  "messages": "Messages",
-  "settings": "Settings",
   "dashboard": "Dashboard",
-  "logOut": "Logout"
+  "service": "Services",
+  "policies_laws": "Policies and laws",
+  "humanitarian_assistance": "Humanitarian Assistance",
+  "covid_19": "Covid 19",
+  "news_updates": "News And Updates",
+  "contact_us": "Contact Us",
+  "about_app": "About the App",
+  "language": "Language",
+  "dark_mode": "Dark Mode",
+  "font_size": "Font Size",
+  "btn_close": "Close",
+  "tab_home": "Home",
+  "tab_news": "News",
+  "tab_contact": "Contact",
+  "tab_menu": "Menu"
 }

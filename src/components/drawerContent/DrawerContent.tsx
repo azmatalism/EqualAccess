@@ -9,8 +9,10 @@ import {COLORS, globalFont, ICONS} from '../../constants/constant';
 import Button from '../button/Button';
 import {useAppContext} from '../../theme/AppContext';
 import {useTheme} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
 const DrawerContent = (props: any) => {
+  const {t} = useTranslation();
   const font = globalFont();
   const {colors} = useTheme();
   const [modalVisible, setModalVisible] = useState(false);
@@ -37,7 +39,7 @@ const DrawerContent = (props: any) => {
             color={colors.text}
           />
           <TouchableOpacity onPress={() => setModalVisible(true)}>
-            <Text style={[font, {marginLeft: 13}]}>Language</Text>
+            <Text style={[font, {marginLeft: 13}]}>{t('language')}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -51,7 +53,7 @@ const DrawerContent = (props: any) => {
             size={22}
             color={colors.text}
           />
-          <Text style={[font, {marginLeft: 13}]}>Dark Mode</Text>
+          <Text style={[font, {marginLeft: 13}]}>{t('dark_mode')}</Text>
         </View>
         <Switch
           trackColor={{false: COLORS.lightBlue, true: COLORS.lightBlue}}
@@ -71,7 +73,7 @@ const DrawerContent = (props: any) => {
             size={22}
             color={colors.text}
           />
-          <Text style={[font, {marginLeft: 13}]}>Font Size</Text>
+          <Text style={[font, {marginLeft: 13}]}>{t('font_size')}</Text>
         </View>
         <View style={styles.labelContainer}>
           <Button
