@@ -7,7 +7,7 @@ const {height, width} = Dimensions.get('window');
 const Button = ({
   title,
   onPress,
-  customTitleStyle,
+  btnTitleStyle,
   btnCustomStyle,
   icon,
   name,
@@ -15,12 +15,22 @@ const Button = ({
   size,
   iconColor,
   disabled,
+  marginVertical,
+  marginHorizontal,
+  margin,
 }: any) => {
   return (
     <TouchableOpacity
       onPress={disabled ? null : onPress}
       activeOpacity={disabled ? 1 : 0.4}
-      style={[styles.button, btnCustomStyle, disabled && styles.disabled]}>
+      style={[
+        styles.button,
+        btnCustomStyle,
+        {margin: margin ? margin : null},
+        {marginVertical: marginVertical ? marginVertical : null},
+        {marginHorizontal: marginHorizontal ? marginHorizontal : null},
+        disabled && styles.disabled,
+      ]}>
       {icon ? (
         <ICONS
           name={name}
@@ -29,7 +39,7 @@ const Button = ({
           color={iconColor}
         />
       ) : (
-        <Text style={[styles.titleText, customTitleStyle]}>{title}</Text>
+        <Text style={[styles.titleText, btnTitleStyle]}>{title}</Text>
       )}
     </TouchableOpacity>
   );

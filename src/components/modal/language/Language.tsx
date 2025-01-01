@@ -1,26 +1,28 @@
-import {FlatList, Modal, Text, TouchableOpacity, View} from 'react-native';
+import {Modal, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import {styles} from './styles';
-import i18n, {languageResources} from '../../../../services/i18n';
+import {languageResources} from '../../../../services/i18n';
 import {useTranslation} from 'react-i18next';
 import i18next from '../../../../services/i18n';
 import languagesList from '../../../../services/languagesList.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {COLORS} from '../../../constants/constant';
+import {COLORS, globalFont, ICONS} from '../../../constants/constant';
 import Button from '../../button/Button';
+import {useTheme} from '@react-navigation/native';
+import {useAppContext} from '../../../theme/AppContext';
 
 const Language = ({visible, onClose}: any) => {
   const {t} = useTranslation();
+  const font = globalFont();
+  const {colors} = useTheme();
+  const {fontStyles} = useAppContext();
   const [selectedData, setSelectedData] = useState('english');
-
-  const [label, setLabel] = useState('English');
+  // console.log('Default Language:==>', selectedData);
 
   const changeLng = async (lng: any, name: any) => {
     i18next.changeLanguage(lng);
     await AsyncStorage.setItem('settings.lang', lng);
     setSelectedData(name);
-    setLabel(name);
-    onClose();
   };
 
   return (
@@ -29,37 +31,57 @@ const Language = ({visible, onClose}: any) => {
       transparent={true}
       visible={visible}
       onRequestClose={onClose}>
-      <View style={styles.modalBackground}>
-        <View style={styles.overlay}>
-          <View style={styles.modalBackground}>
-            <View style={styles.modalView}>
-              <FlatList
-                data={Object.keys(languageResources)}
-                renderItem={({item}) => (
-                  <TouchableOpacity
-                    onPress={() =>
-                      changeLng(
-                        item,
-                        languagesList[item as keyof typeof languagesList].name,
-                      )
-                    }>
-                    <Text
-                      style={{
-                        color: COLORS.textColor,
-                        padding: 5,
-                        marginLeft: 10,
-                      }}>
-                      {
-                        languagesList[item as keyof typeof languagesList]
-                          .nativeName
-                      }
-                    </Text>
-                  </TouchableOpacity>
-                )}
-              />
-              <Button title="Close" onPress={onClose} />
-            </View>
+      <View style={styles.overlay}>
+        <View style={[styles.modalBackground, {backgroundColor: colors.card}]}>
+          <View style={styles.modalView}>
+            <Text style={[fontStyles.bold, {color: colors.text}]}>
+              {t('language')}
+            </Text>
+            {Object.keys(languageResources).map(item => {
+              const languageName =
+                languagesList[item as keyof typeof languagesList].name;
+              const isSelected = selectedData === languageName;
+              return (
+                <View style={styles.optionContainer} key={item}>
+                  <View style={{width: '100%'}}>
+                    <TouchableOpacity
+                      onPress={() =>
+                        changeLng(
+                          item,
+                          languagesList[item as keyof typeof languagesList]
+                            .name,
+                        )
+                      }>
+                      <Text style={[font, {textAlign: 'center'}]}>
+                        {
+                          languagesList[item as keyof typeof languagesList]
+                            .nativeName
+                        }
+                      </Text>
+                    </TouchableOpacity>
+                    <View style={styles.divider} />
+                  </View>
+
+                  <View>
+                    {isSelected && (
+                      <ICONS
+                        iconFamily="ionicons"
+                        name="checkmark-circle"
+                        size={22}
+                        color={COLORS.blue}
+                      />
+                    )}
+                  </View>
+                </View>
+              );
+            })}
           </View>
+          <Button
+            margin={10}
+            btnTitleStyle={[font, {color: COLORS.white}]}
+            title={t('btn_close')}
+            onPress={onClose}
+          />
         </View>
       </View>
     </Modal>

@@ -3,8 +3,10 @@ import React, {useEffect, useState} from 'react';
 import {styles} from './styles';
 import {BottomTab, globalFont, Header, tabs} from '../../constants/constant';
 import {DrawerActions} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
 const News = ({navigation}: any) => {
+  const {t} = useTranslation();
   const font = globalFont();
   const [activeTab, setActiveTab] = useState(2);
 
@@ -29,9 +31,9 @@ const News = ({navigation}: any) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header heading={'News and Updates'} navigation={navigation} />
+      <Header heading={t('news_updates')} navigation={navigation} />
       <View style={styles.container}>
-        <Text style={font}>News!</Text>
+        <Text style={font}>{t('news_updates')}</Text>
       </View>
       <BottomTab
         tabs={tabs}

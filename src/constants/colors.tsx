@@ -1,9 +1,10 @@
 export default {
-  lightBG: '#FAF9F6',
+  lightBG: '#F9F6EE',
   darkBG: '#0b192c',
   blue: '#0096FF',
-  lightCard: '#F9F6EE',
+  lightCard: '#FFFFFF',
   darkCard: '#0f1c2f',
+  line: '#A5A5A5',
 
   gradientForm: '#A376F1',
   primary: '#7d5fff',
@@ -26,7 +27,6 @@ export default {
   lightGreen: '#E8F3F1',
   dimGray: '#E8E8E8',
   screenBG: '#A4C4FF',
-  line: '#A5A5A5',
   gradientLineColor: 'rgba(44, 135, 242, 0.00)',
   viewBgColor: 'rgba(245, 245, 245, 1)',
   lightWhiteline: '#A1C5F0',

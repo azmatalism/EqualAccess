@@ -1,10 +1,18 @@
 {
-  "welcome": "ایپ میں خوش آمدید",
-  "licenseAgg": "میں لیزا کے لیے اختتامی صارف لائسنس معاہدے سے متفق ہوں",
-  "PrivacyAgg": "میں لیزا کے لیے رازداری کی پالیسی سے متفق ہوں",
-  "home": "ہوم",
-  "messages": "پیغامات",
-  "settings": "ترتیبات",
   "dashboard": "ڈیش بورڈ",
-  "logOut": "لاگ آؤٹ"
+  "service": "خدمات",
+  "policies_laws": "پالیسیاں اور قوانین",
+  "humanitarian_assistance": "انسانی امداد",
+  "covid_19": "کووڈ 19",
+  "news_updates": "خبریں اور تازہ ترین معلومات",
+  "contact_us": "ہم سے رابطہ کریں",
+  "about_app": "ایپ کے بارے میں",
+  "language": "زبان",
+  "dark_mode": "ڈارک موڈ",
+  "font_size": "فونٹ کا سائز",
+  "btn_close": "بند کریں",
+  "tab_home": "ہوم",
+  "tab_news": "خبریں",
+  "tab_contact": "رابطہ",
+  "tab_menu": "مینو"
 }

@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Feather from 'react-native-vector-icons/Feather';
@@ -12,8 +12,8 @@ import Entypo from 'react-native-vector-icons/Entypo';
 const Icon = ({name, color, size, iconFamily}: any) => {
   return (
     <View>
-      {iconFamily === 'fontAwesone' ? (
-        <FontAwesome5Icon name={name} size={size} color={color} />
+      {iconFamily === 'fontAwesone6' ? (
+        <FontAwesome6 name={name} size={size} color={color} />
       ) : iconFamily === 'ionicons' ? (
         <Ionicons name={name} size={size} color={color} />
       ) : iconFamily === 'Fontisto' ? (
