@@ -11,6 +11,18 @@ export const globalFont = () => {
     fontWeight: '500' as '500',
   };
 };
+export const globalFontNormal = () => {
+  const {fontSize} = useAppContext();
+  const {colors} = useTheme();
+  return {
+    fontSize,
+    color: colors.text,
+  };
+};
+export const globalContainer = {
+  flex: 1,
+  padding: 10,
+};
 
 export const globalStyles = {
   paddingHorizontal: 24,

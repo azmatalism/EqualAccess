@@ -16,7 +16,7 @@ const Splash = ({navigation}: any) => {
 
   return (
     <SafeAreaView style={[styles.main, {backgroundColor: colors.background}]}>
-      <Image style={styles.spLogo} source={IMGS.user} />
+      <Image style={styles.spLogo} source={IMGS.logo} />
     </SafeAreaView>
   );
 };

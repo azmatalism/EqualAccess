@@ -1,6 +1,5 @@
 export default {
   SPLASH: 'Splash',
-  // LANGUAGE: 'Language',
 
   HOME: 'Home',
   HOME_TAB: 'Home Tab',

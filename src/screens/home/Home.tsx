@@ -1,9 +1,22 @@
-import {View, Text, SafeAreaView} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+  View,
+} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {styles} from './styles';
-import {BottomTab, globalFont, Header, tabs} from '../../constants/constant';
+import {
+  BottomTab,
+  globalContainer,
+  globalFont,
+  Header,
+  tabs,
+} from '../../constants/constant';
 import {DrawerActions} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
+import YoutubeVideo from '../../components/youtubeVideo/YoutubeVideo';
 
 function Home({navigation}: any) {
   const {t} = useTranslation();
@@ -32,9 +45,15 @@ function Home({navigation}: any) {
   return (
     <SafeAreaView style={styles.container}>
       <Header heading={t('dashboard')} navigation={navigation} />
-      <View style={styles.container}>
-        <Text style={font}>{t('dashboard')}</Text>
-      </View>
+      <KeyboardAvoidingView
+        style={globalContainer}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        <ScrollView
+          contentContainerStyle={{flexGrow: 1}}
+          showsVerticalScrollIndicator={false}>
+          <YoutubeVideo videoId="mQYqBVY7jy0" />
+        </ScrollView>
+      </KeyboardAvoidingView>
       <BottomTab
         tabs={tabs}
         activeTab={activeTab}

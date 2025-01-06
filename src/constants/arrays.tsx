@@ -5,30 +5,6 @@ export const dashboardCardArray = [
     title: 'medication_reminders',
     screenName: 'reminder',
   },
-  {
-    id: 2,
-    // img: require('../../../assets/images/askAi.png'),
-    title: 'ask_lisa',
-    screenName: 'askLisa',
-  },
-  {
-    id: 3,
-    // img: require('../../../assets/images/testResult.png'),
-    title: 'test_result',
-    screenName: 'testResult',
-  },
-  {
-    id: 4,
-    // img: require('../../../assets/images/healthSurvey.png'),
-    title: 'health_survey',
-    screenName: 'healthSurvey',
-  },
-  {
-    id: 5,
-    // img: require('../../../assets/images/pic1.png'),
-    title: 'family_record',
-    screenName: 'familyRecord',
-  },
 ];
 
 export const tabs = [
