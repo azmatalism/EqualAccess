@@ -23,35 +23,62 @@ const DrawerContent = (props: any) => {
     increaseFontSize,
     decreaseFontSize,
   } = useAppContext();
+  const [isLanguageActive, setIsLanguageActive] = useState(false);
+  const [isDarkActive, setIsDarkActive] = useState(false);
+  const [isFontActive, setIsFontActive] = useState(false);
+
+  const handleLanguage = () => {
+    setIsLanguageActive(!isLanguageActive);
+    setModalVisible(true);
+  };
 
   return (
     <DrawerContentScrollView {...props}>
-      {/* Render default drawer items */}
       <DrawerItemList {...props} />
 
       {/* Language Button */}
-      <View style={styles.container}>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        style={[
+          styles.container,
+          {backgroundColor: isLanguageActive ? COLORS.lightBlue : colors.card},
+        ]}
+        onPressIn={() => setIsLanguageActive(true)}
+        onPressOut={() => setIsLanguageActive(false)}
+        onPress={handleLanguage}>
         <View style={styles.labelContainer}>
           <ICONS
             iconFamily="ionicons"
             name="globe-outline"
             size={22}
-            color={colors.text}
+            color={isLanguageActive ? COLORS.blue : colors.text}
           />
-          <TouchableOpacity onPress={() => setModalVisible(true)}>
-            <Text style={[font, {marginLeft: 13}]}>{t('language')}</Text>
-          </TouchableOpacity>
+          <Text
+            style={
+              isLanguageActive
+                ? [font, {marginLeft: 13, color: COLORS.blue}]
+                : [font, {marginLeft: 13}]
+            }>
+            {t('language')}
+          </Text>
         </View>
-      </View>
+      </TouchableOpacity>
 
       {/* Dark Mode Toggle */}
-      <View style={styles.container}>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        style={[
+          styles.container,
+          {backgroundColor: isDarkActive ? COLORS.lightBlue : colors.card},
+        ]}
+        onPressIn={() => setIsDarkActive(true)}
+        onPressOut={() => setIsDarkActive(false)}>
         <View style={styles.labelContainer}>
           <ICONS
             iconFamily="ionicons"
             name="moon"
             size={22}
-            color={colors.text}
+            color={isDarkActive ? COLORS.blue : colors.text}
           />
           <Text style={[font, {marginLeft: 13}]}>{t('dark_mode')}</Text>
         </View>
@@ -62,10 +89,17 @@ const DrawerContent = (props: any) => {
           value={isDarkMode}
           onValueChange={() => setIsDarkMode(prev => !prev)}
         />
-      </View>
+      </TouchableOpacity>
 
       {/* Font Size Adjuster */}
-      <View style={styles.container}>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        style={[
+          styles.container,
+          {backgroundColor: isFontActive ? COLORS.lightBlue : colors.card},
+        ]}
+        onPressIn={() => setIsFontActive(true)}
+        onPressOut={() => setIsFontActive(false)}>
         <View style={styles.labelContainer}>
           <ICONS
             iconFamily="material"
@@ -99,7 +133,7 @@ const DrawerContent = (props: any) => {
             onPress={increaseFontSize}
           />
         </View>
-      </View>
+      </TouchableOpacity>
 
       {/* Language Modal */}
       <Language visible={modalVisible} onClose={() => setModalVisible(false)} />
@@ -115,7 +149,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 15,
-    paddingVertical: 20,
+    paddingVertical: 16,
+    borderRadius: 8,
+    marginVertical: 1,
   },
   labelContainer: {
     flexDirection: 'row',

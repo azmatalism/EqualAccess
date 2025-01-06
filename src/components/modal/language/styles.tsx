@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
   },
   divider: {
     borderBottomWidth: 1,
-    borderBottomColor: COLORS.line,
+    borderBottomColor: COLORS.gray,
     width: '50%',
     marginTop: 10,
     alignSelf: 'center',
