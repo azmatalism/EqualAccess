@@ -20,6 +20,7 @@ const LightTheme = {
     // ...BaseTheme.colors,
     background: COLORS.lightBG,
     card: COLORS.lightCard,
+    border: COLORS.lightBorder,
     text: COLORS.black,
   },
 };
@@ -32,6 +33,7 @@ const DarkTheme = {
     // ...BaseTheme.colors,
     background: COLORS.darkBG,
     card: COLORS.darkCard,
+    border: COLORS.lightBorder,
     text: COLORS.white,
   },
 };

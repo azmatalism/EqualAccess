@@ -10,4 +10,10 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 10,
   },
+  rightAligned: {
+    alignItems: 'flex-end',
+  },
+  leftAligned: {
+    alignItems: 'flex-start',
+  },
 });

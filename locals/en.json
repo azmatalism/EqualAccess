@@ -3,6 +3,7 @@
   "service": "Services",
   "policies_laws": "Policies and laws",
   "humanitarian_assistance": "Humanitarian Assistance",
+  "disability_information": "Disability Stakeholders Information",
   "covid_19": "Covid 19",
   "news_updates": "News And Updates",
   "contact_us": "Contact Us",
@@ -18,5 +19,13 @@
   "tab_home": "Home",
   "tab_news": "News",
   "tab_contact": "Contact",
-  "tab_menu": "Menu"
+  "tab_menu": "Menu",
+  "federal": "Federal",
+  "punjab": "Punjab",
+  "sindh": "Sindh",
+  "khyber_pakhtunkhwa": "Khyber Pakhtunkhwa",
+  "balochistan": "Balochistan",
+  "ak_gb": "AK & GB",
+  "dpo": "DPO",
+  "ndma": "NDMA"
 }

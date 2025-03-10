@@ -4,10 +4,10 @@ import COLORS from './colors';
 import ICONS from './Icon';
 import {
   globalContainer,
-  globalStyles,
   shadow,
   globalFont,
-  globalFontNormal,
+  headingStyle,
+  normalStyle,
 } from './global';
 import Header from '../components/header/Header';
 import BottomTab from '../components/bottomTabs/BottomTab';
@@ -23,7 +23,7 @@ export {
   shadow,
   tabs,
   globalContainer,
-  globalStyles,
   globalFont,
-  globalFontNormal,
+  headingStyle,
+  normalStyle,
 };
