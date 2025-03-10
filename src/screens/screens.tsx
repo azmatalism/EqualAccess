@@ -11,5 +11,7 @@ export {default as PoliciesLaw} from './policiesLaw/PoliciesLaw';
 export {default as Covid} from './covid/Covid';
 export {default as Humanitarian} from './humanitarian/Humanitarian';
 export {default as AboutApp} from './aboutApp/AboutApp';
+export {default as DisabilityStakeholder} from './disabilityStakeholder/DisabilityStakeholder';
+export {default as GlobalScreen} from './globalScreen/GlobalScreen';
 
 //Bottom Tab

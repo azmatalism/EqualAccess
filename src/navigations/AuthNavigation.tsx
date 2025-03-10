@@ -1,5 +1,12 @@
 import React from 'react';
-import {Splash, Services, News, Contact} from '../screens/screens';
+import {
+  Splash,
+  Services,
+  News,
+  Contact,
+  DisabilityStakeholder,
+  GlobalScreen,
+} from '../screens/screens';
 import {COLORS, ROUTES} from '../constants/constant';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import DrawerNavigation from './DrawerNavigation';
@@ -25,6 +32,11 @@ function AuthNavigation() {
       <Stack.Screen name={ROUTES.SERVICES_TAB} component={Services} />
       <Stack.Screen name={ROUTES.NEWS_TAB} component={News} />
       <Stack.Screen name={ROUTES.CONTACT_TAB} component={Contact} />
+      <Stack.Screen
+        name={ROUTES.DISABILITY_STAKEHOLDER}
+        component={DisabilityStakeholder}
+      />
+      <Stack.Screen name={ROUTES.GLOBAL_SCREEN} component={GlobalScreen} />
     </Stack.Navigator>
   );
 }

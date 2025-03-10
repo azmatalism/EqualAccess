@@ -34,8 +34,11 @@ const News = ({navigation}: any) => {
   };
 
   useEffect(() => {
-    setActiveTab(2);
-  }, [navigation]);
+    const activeHomeTab = () => {
+      setActiveTab(2);
+    };
+    activeHomeTab();
+  }, [navigation, activeTab]);
 
   return (
     <SafeAreaView style={styles.container}>

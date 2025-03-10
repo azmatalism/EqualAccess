@@ -3,6 +3,7 @@
   "service": "خدمات",
   "policies_laws": "پالیسیاں اور قوانین",
   "humanitarian_assistance": "انسانی امداد",
+  "disability_information": "معذوری کے اسٹیک ہولڈرز کی معلومات",
   "covid_19": "کووڈ 19",
   "news_updates": "خبریں اور تازہ ترین معلومات",
   "contact_us": "ہم سے رابطہ کریں",
@@ -18,5 +19,13 @@
   "tab_home": "ہوم",
   "tab_news": "خبریں",
   "tab_contact": "رابطہ",
-  "tab_menu": "مینو"
+  "tab_menu": "مینو",
+  "federal": "وفاقی",
+  "punjab": "پنجاب",
+  "sindh": "سندھ",
+  "khyber_pakhtunkhwa": "خیبر پختونخوا",
+  "balochistan": "بلوچستان",
+  "ak_gb": "آزاد کشمیر اور گلگت بلتستان",
+  "dpo": "ضلعی پولیس افسر",
+  "ndma": "قومی آفات انتظامیہ اتھارٹی"
 }

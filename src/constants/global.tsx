@@ -11,7 +11,8 @@ export const globalFont = () => {
     fontWeight: '500' as '500',
   };
 };
-export const globalFontNormal = () => {
+
+export const normalStyle = () => {
   const {fontSize} = useAppContext();
   const {colors} = useTheme();
   return {
@@ -19,32 +20,30 @@ export const globalFontNormal = () => {
     color: colors.text,
   };
 };
+
+export const headingStyle = () => {
+  const {fontSize} = useAppContext();
+  const {colors} = useTheme();
+  return {
+    fontSize: fontSize + 4,
+    color: colors.text,
+    fontWeight: '700' as '700',
+  };
+};
+
 export const globalContainer = {
   flex: 1,
   padding: 10,
 };
 
-export const globalStyles = {
-  paddingHorizontal: 24,
-  paddingVertical: 24,
-  fontFamily300: 'LeagueSpartan-Light',
-  fontFamily400: 'LeagueSpartan-Regular',
-  fontFamily500: 'LeagueSpartan-Medium',
-  fontFamily100: 'LeagueSpartan-Thin',
-  fontFamily600: 'LeagueSpartan-SemiBold',
-  fontFamily700: 'LeagueSpartan-Bold',
-  fontFamily800: 'LeagueSpartan-ExtraBold',
-  fontFamily200: 'LeagueSpartan-ExtraLight',
-};
-
 export const shadow = {
   shadowColor: COLORS.black,
   shadowOffset: {
-    width: 0,
-    height: 1,
+    width: 2,
+    height: 2,
   },
   shadowOpacity: 0.2,
-  shadowRadius: 1.41,
-  elevation: 2,
+  shadowRadius: 5,
+  elevation: 3,
   backgroundColor: COLORS.white,
 };

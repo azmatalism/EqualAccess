@@ -1,17 +1,15 @@
+import React, {useEffect, useState} from 'react';
 import {
-  I18nManager,
   KeyboardAvoidingView,
   Platform,
   SafeAreaView,
   ScrollView,
   Text,
-  View,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
 import {styles} from './styles';
 import {
   BottomTab,
-  globalFontNormal,
+  normalStyle,
   globalContainer,
   Header,
   tabs,
@@ -20,18 +18,18 @@ import {
 import {DrawerActions} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
 import InputCard from '../../components/inputCard/InputCard';
-import YoutubeVideo from '../../components/youtubeVideo/YoutubeVideo';
 import SoundCloudAudio from '../../components/soundCloudAudio/SoundCloudAudio';
 import Button from '../../components/button/Button';
 
 const Contact = ({navigation}: any) => {
-  const {t} = useTranslation();
-  const normalFont = globalFontNormal();
+  const {t, i18n} = useTranslation();
+  const normalStyleFont = normalStyle();
   const [activeTab, setActiveTab] = useState(3);
-  const isRtl = I18nManager.isRTL;
+  const isRtl = ['ur'].includes(i18n.language);
 
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+
   const handleTabPress = (index: number) => {
     if (index === 4) {
       navigation.dispatch(DrawerActions.openDrawer());
@@ -45,8 +43,11 @@ const Contact = ({navigation}: any) => {
   };
 
   useEffect(() => {
-    setActiveTab(3);
-  }, [navigation]);
+    const activeHomeTab = () => {
+      setActiveTab(3);
+    };
+    activeHomeTab();
+  }, [navigation, activeTab]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -59,11 +60,14 @@ const Contact = ({navigation}: any) => {
           contentContainerStyle={{flexGrow: 1}}
           showsVerticalScrollIndicator={false}>
           <SoundCloudAudio trackUrl="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/406749579&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" />
-          <YoutubeVideo videoId="mQYqBVY7jy0" />
           <Text
             style={[
-              normalFont,
-              {marginVertical: 10, textAlign: isRtl ? 'right' : 'left'},
+              normalStyleFont,
+              {
+                marginVertical: 10,
+                textAlign: isRtl ? 'right' : 'left',
+                writingDirection: isRtl ? 'rtl' : 'ltr',
+              },
             ]}>
             {t('contact_us_form')}
           </Text>
@@ -87,7 +91,7 @@ const Contact = ({navigation}: any) => {
           />
           <Button
             title={t('contact_us_btn_submit')}
-            btnTitleStyle={[normalFont, {color: COLORS.white}]}
+            btnTitleStyle={[normalStyleFont, {color: COLORS.white}]}
           />
         </ScrollView>
       </KeyboardAvoidingView>
@@ -96,7 +100,6 @@ const Contact = ({navigation}: any) => {
         tabs={tabs}
         activeTab={activeTab}
         onTabPress={handleTabPress}
-        // onPress={}
       />
     </SafeAreaView>
   );

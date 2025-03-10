@@ -32,4 +32,7 @@ export default {
   ABOUT: 'About',
   ABOUT_TAB: 'About Tab',
   ABOUT_DRAWER: 'About Drawer',
+
+  DISABILITY_STAKEHOLDER: 'Disability Stakeholders',
+  GLOBAL_SCREEN: 'Global Screen',
 };
